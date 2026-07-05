@@ -19,6 +19,14 @@ const specialtyItems = [
     { label: "Psicología Holística", href: "/holistica" },
 ];//con esto los puedo recorrer con .map() sin repetir código
 
+const navigationItems = [
+    menuItems[0],          // Servicios
+    ...specialtyItems,
+    menuItems[1],          // Conóceme
+    menuItems[2],          // Ubicación
+    menuItems[3],          // Contacto
+];
+
 /* Crear componente */
 export default function Navbar() {
     const pathname = usePathname();
@@ -27,20 +35,21 @@ export default function Navbar() {
     const handleScroll = () => {
         setScrolled(window.scrollY > 40);// cantidad de pixeles que el usuario ha bajado
     };
-
     window.addEventListener("scroll", handleScroll);
     return () => {
         window.removeEventListener("scroll", handleScroll);
     };
-
     }, []);
-
-    return (   //estructura principal 
+    //ocupo una variable para identificar los dos tipos de link del arreglo compuesto
+       
+    return (   //estructura principal
+     
     <header
         className={`sticky top-0 z-50 bg-white transition-all duration-300 ${
             scrolled ? "shadow-lg" : "shadow-md"
         }`}>
-        <Container>
+        
+        <div className="max-w-screen-2xl mx-auto px-6">   
         <div 
         className={`flex items-center justify-between transition-all duration-300 ${
         scrolled ? "py-0.5" : "py-1"
@@ -50,27 +59,43 @@ export default function Navbar() {
                     src="/images/logo.png"
                     alt="Logo Psicólogo Manuel Carrillo"
                     width={45}
-                    height={0}
+                    height={10}
                     priority
                 />
 
 
             </Link>
-            <nav className="flex items-center gap-10">
-                {menuItems.map((item) => (
-                    <Link  key={item.label}  href={item.href}
-                    
-                    className="text-[var(--primary)] text-lg font-bold transition-all duration-300 hover:text-[var(--accent)] "
-                    >
-                    {item.label}
-                    </Link>
-                ))}
+
+            <nav className="flex items-center gap-24">
+                {navigationItems.map((item) => {
+
+                    const isSpecialty = item.href.startsWith("/");
+
+                    return (
+                        <Link
+                            key={item.label}
+                            href={item.href}
+                            className={`text-lg font-bold transition-all duration-300 ${
+                                isSpecialty
+                                    ? pathname === item.href
+                                        ? "text-[var(--accent)] border-b-2 border-[var(--accent)]"
+                                        : "text-[var(--primary)] hover:text-[var(--accent)]"
+                                    : "text-[var(--primary)] hover:text-[var(--accent)]"
+                            }`}
+                        >
+                            {item.label}
+                        </Link>
+                    );
+                })}
             </nav>
+
+
+
             <Link href="/login"   
                 className="
                     bg-[var(--primary)]
                     text-white
-                    px-7
+                    px-5
                     py-2
                     text-lg
                     rounded-full
@@ -86,27 +111,15 @@ export default function Navbar() {
 
             </Link>
         </div>
-        </Container>
-        <div className="border-t border-gray-100">
-            <Container>
-            <div className="flex justify-center items-center gap-25 py-2">
-                {specialtyItems.map((item) => (
-                    <Link  key={item.label}  href={item.href}  
+        </div> 
+        
 
-                    className={`text-lg font-bold transition-all duration-300 ${
-                        pathname === item.href
-                            ? "text-[var(--accent)] border-b-2 border-[var(--accent)]"
-                            : "text-[var(--primary)] hover:text-[var(--accent)]"
-                        }`}
-                    >
-                        {item.label}
 
-                    </Link>
-                ))}
-            </div>
-            </Container>
-        </div>
+
+
+
+
     </header>
     );
-
+    
 }
