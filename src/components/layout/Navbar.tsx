@@ -7,25 +7,42 @@ import { usePathname } from "next/navigation";
 import Image from "next/image";
 
 /*Arreglos del menú*/
-const menuItems = [
-    {label: "Servicios", href: "#servicios"}, //href en un atributo que indica la ruta de destino
-    {label: "Conóceme", href: "#conoceme" },
-    {label: "Ubicación", href: "#ubicacion" },
-    {label: "Contacto", href: "#contacto" },
-];
-
-const specialtyItems = [
-    { label: "Psicología Forense", href: "/forense" },
-    { label: "Psicología Holística", href: "/holistica" },
-];//con esto los puedo recorrer con .map() sin repetir código
-
 const navigationItems = [
-    menuItems[0],          // Servicios
-    ...specialtyItems,
-    menuItems[1],          // Conóceme
-    menuItems[2],          // Ubicación
-    menuItems[3],          // Contacto
+  {
+    label: "Servicios",
+    href: "#servicios",
+    specialty: false,
+  },
+  {
+    label: "Psicología Forense",
+    href: "/forense",
+    specialty: true,
+  },
+  {
+    label: "Psicología Holística",
+    href: "/holistica",
+    specialty: true,
+  },
+  {
+    label: "Conóceme",
+    href: "#conoceme",
+    specialty: false,
+  },
+  {
+    label: "Ubicación",
+    href: "#ubicacion",
+    specialty: false,
+  },
+  {
+    label: "Contacto",
+    href: "#contacto",
+    specialty: false,
+  },
 ];
+
+const navLinkStyle =
+  "text-lg font-bold transition-all duration-300";
+
 
 /* Crear componente */
 export default function Navbar() {
@@ -59,28 +76,26 @@ export default function Navbar() {
                     src="/images/logo.png"
                     alt="Logo Psicólogo Manuel Carrillo"
                     width={45}
-                    height={10}
+                    height={45}
                     priority
                 />
 
 
             </Link>
 
-            <nav className="flex items-center gap-24">
+            <nav className="flex flex-1 justify-center items-center gap-19">
                 {navigationItems.map((item) => {
 
-                    const isSpecialty = item.href.startsWith("/");
-
+                    //const isSpecialty = item.href.startsWith("/");
+                    const isActive = item.specialty && pathname === item.href;
                     return (
                         <Link
                             key={item.label}
                             href={item.href}
-                            className={`text-lg font-bold transition-all duration-300 ${
-                                isSpecialty
-                                    ? pathname === item.href
+                            className={`${navLinkStyle}  ${
+                                isActive
                                         ? "text-[var(--accent)] border-b-2 border-[var(--accent)]"
                                         : "text-[var(--primary)] hover:text-[var(--accent)]"
-                                    : "text-[var(--primary)] hover:text-[var(--accent)]"
                             }`}
                         >
                             {item.label}
