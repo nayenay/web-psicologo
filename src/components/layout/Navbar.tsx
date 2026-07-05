@@ -36,10 +36,15 @@ export default function Navbar() {
     }, []);
 
     return (   //estructura principal 
-    <header className="sticky top-0 z-50 bg-white shadow-md"> 
-    
+    <header
+        className={`sticky top-0 z-50 bg-white transition-all duration-300 ${
+            scrolled ? "shadow-lg" : "shadow-md"
+        }`}>
         <Container>
-        <div className="flex items-center justify-between py-1">
+        <div 
+        className={`flex items-center justify-between transition-all duration-300 ${
+        scrolled ? "py-0.5" : "py-1"
+        }`} >
             <Link href="/" className="flex items-center">
                 <Image
                     src="/images/logo.png"
