@@ -1,7 +1,10 @@
 "use client"; /*se ejecutará en el navegador */
 /* usar Link para navegar y useState para el menú hamburguesa*/
 import Link from "next/link"; 
-import {useState} from "react";
+import { useEffect, useState } from "react";
+import Container from "./Container";
+import { usePathname } from "next/navigation";
+import Image from "next/image";
 
 /*Arreglos del menú*/
 const menuItems = [
@@ -18,44 +21,87 @@ const specialtyItems = [
 
 /* Crear componente */
 export default function Navbar() {
+    const pathname = usePathname();
+    const [scrolled, setScrolled] = useState(false);//guarda varable scrolled
+    useEffect(() => { //es iun hook que se ejecuta cuando aparece el componente, cuando el navbar aparece empieza a escuchar el scroll
+    const handleScroll = () => {
+        setScrolled(window.scrollY > 40);// cantidad de pixeles que el usuario ha bajado
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+        window.removeEventListener("scroll", handleScroll);
+    };
+
+    }, []);
+
     return (   //estructura principal 
     <header className="sticky top-0 z-50 bg-white shadow-md"> 
-        <div className="max-w-7xl mx-auto flex items-center justify-between px-8 py-4">
-            <Link href="/"
-                className="text-2xl font-bold text-[var(--primary-dark)]">
-                Logo
+    
+        <Container>
+        <div className="flex items-center justify-between py-1">
+            <Link href="/" className="flex items-center">
+                <Image
+                    src="/images/logo.png"
+                    alt="Logo Psicólogo Manuel Carrillo"
+                    width={45}
+                    height={0}
+                    priority
+                />
+
+
             </Link>
-            <nav className="flex gap-8">
+            <nav className="flex items-center gap-10">
                 {menuItems.map((item) => (
                     <Link  key={item.label}  href={item.href}
-                    className="text-black hover:text-[var(--accent)] transition-colors">
+                    
+                    className="text-[var(--primary)] text-lg font-bold transition-all duration-300 hover:text-[var(--accent)] "
+                    >
                     {item.label}
                     </Link>
                 ))}
             </nav>
             <Link href="/login"   
-                className="rounded-lg bg-[var(--primary)] px-5 py-2 text-white transition hover:bg-[var(--primary-dark)]">
+                className="
+                    bg-[var(--primary)]
+                    text-white
+                    px-7
+                    py-2
+                    text-lg
+                    rounded-full
+                    font-medium
+                    transition-all
+                    duration-300
+                    hover:bg-[var(--primary-dark)]
+                    hover:scale-105
+                    "
+                    >
 
                 Iniciar sesión
 
             </Link>
         </div>
-        <div className="border-t border-gray-200">
-            <div className="max-w-7xl mx-auto flex justify-center gap-12 py-3">
+        </Container>
+        <div className="border-t border-gray-100">
+            <Container>
+            <div className="flex justify-center items-center gap-25 py-2">
                 {specialtyItems.map((item) => (
-                    <Link  key={item.label}  href={item.href}  className="font-medium text-[var(--primary-dark)] transition hover:text-[var(--accent)]">
+                    <Link  key={item.label}  href={item.href}  
 
+                    className={`text-lg font-bold transition-all duration-300 ${
+                        pathname === item.href
+                            ? "text-[var(--accent)] border-b-2 border-[var(--accent)]"
+                            : "text-[var(--primary)] hover:text-[var(--accent)]"
+                        }`}
+                    >
                         {item.label}
 
                     </Link>
                 ))}
             </div>
+            </Container>
         </div>
     </header>
     );
 
-}//por ahora solo dejo eta estrucutra
-
-/* Paso 5: Crear la estrucura visual */
-
-/*Paso 6: Agregar los enlaces */
+}
