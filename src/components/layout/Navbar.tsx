@@ -62,7 +62,7 @@ export default function Navbar() {
     return (   //estructura principal
      
     <header
-        className={`sticky top-0 z-50 bg-white transition-all duration-300 ${
+        className={`sticky top-0 z-50 bg-[var(--background)] border-b border-gray-200  transition-all duration-300 ${
             scrolled ? "shadow-lg" : "shadow-md"
         }`}>
         

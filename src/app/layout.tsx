@@ -1,5 +1,6 @@
 import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
+
 //import Footer from "@/components/layout/Footer";
 
 export default function RootLayout({
@@ -9,12 +10,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es">
-      <body>
-
+      <body className="bg-[var(--background)] text-[var(--text)] antialiased">
+        
         <Navbar /> 
+        
 
         <main>
           {children}
+          
         </main>
 
         
