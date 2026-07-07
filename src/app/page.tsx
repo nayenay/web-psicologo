@@ -1,9 +1,11 @@
 import Hero from "@/components/home/Hero";
+import Intro from "@/components/home/Intro";
 
 export default function Home() {
   return (
     <main>
       <Hero />
+      <Intro />
       <section id="servicios">
         <h1>Servicios</h1>
       </section>
