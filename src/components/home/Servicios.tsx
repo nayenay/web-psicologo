@@ -65,18 +65,67 @@ export default function Servicios() {
                         buttonText="Agendar cita"
                         buttonHref="#agendarcita"
                     >
-                        <p>Tabla de consultas</p>
-                        {/* Aquí irá la tabla */}
+                        <div className="space-y-3">
+                            {psicologiaClinica.map((consulta) => (
+                                <div
+                                    key={consulta.nombre}
+                                    className="  flex  justify-between  items-center  border-b  border-white/60  pb-2  "
+                                >
+
+                                    <span className="text-[15px] text-black font-semibold">
+                                        {consulta.nombre}
+                                    </span>
+                                    <span
+                                        className="  rounded-full
+                                            bg-white
+                                            px-3
+                                            py-1
+                                            text-sm
+                                            font-semibold
+                                            text-[var(--primary-dark)]
+                                            shadow-sm  "
+                                    >
+                                        {consulta.precio}
+                                    </span>
+                                </div>
+                            ))}
+
+                        </div>
 
                     </ServiceCard>
                     <ServiceCard
                         title="Psicología Forense"
-                        
                         buttonText="Ver más"
                         buttonHref="/forense"
                     >
-                        <p>Tabla de consultas</p>
-                        {/* Aquí irá la lista */}
+                        <ul className="space-y-4">
+
+                            {psicologiaForense.map((servicio) => (
+
+                                <li
+                                    key={servicio}
+                                    className="flex items-start gap-3"
+                                >
+
+                                    <span
+                                        className="
+                                            mt-2
+                                            h-2
+                                            w-2
+                                            rounded-full
+                                            bg-[var(--primary)]
+                                        "
+                                    />
+
+                                    <span className="text-black">
+                                        {servicio}
+                                    </span>
+
+                                </li>
+
+                            ))}
+
+                        </ul>
                     
                     </ServiceCard>
                     <ServiceCard
@@ -85,8 +134,34 @@ export default function Servicios() {
                         buttonText="Ver más"
                         buttonHref="/holistica"
                     >
-                        <p>Tabla de consultas</p>
-                        {/* Aquí irá la lista */}
+                        <ul className="space-y-4">
+
+                            {psicologiaHolistica.map((servicio) => (
+
+                                <li
+                                    key={servicio}
+                                    className="flex items-start gap-3"
+                                >
+
+                                    <span
+                                        className="
+                                            mt-2
+                                            h-2
+                                            w-2
+                                            rounded-full
+                                            bg-[var(--primary)]
+                                        "
+                                    />
+
+                                    <span className="text-black">
+                                        {servicio}
+                                    </span>
+
+                                </li>
+
+                            ))}
+
+                        </ul>
                     
                     </ServiceCard>
                 </div>    
