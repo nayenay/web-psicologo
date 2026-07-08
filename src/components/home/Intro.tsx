@@ -59,9 +59,8 @@ export default function Intro() {
                             text-[var(--primary-dark)]
                         "
                     >
-                        Brindo atención psicológica profesional con un enfoque ético,
-                        humano y personalizado, acompañando a cada persona en su proceso
-                        de crecimiento, bienestar emocional y resolución de conflictos.
+                        Atención profesional que une la seriedad técnica requerida en procesos legales con un cuidado completo: mente, emociones, cuerpo y vínculos. 
+                        Acompañamiento confiable y humano para personas, familias y autoridades.
                     </p>
                 </motion.div>
             </Container>

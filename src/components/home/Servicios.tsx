@@ -3,32 +3,58 @@ import ServiceCard from "../cards/ServiceCard";
 
 const psicologiaClinica = [
   {
-    nombre: "Consulta Individual",
-    precio: "$700 MXN",
+    nombre: "Terapia en línea",
+    precio: "$250 MXN",
   },
   {
-    nombre: "Consulta de Pareja",
-    precio: "$900 MXN",
+    nombre: "Terapia individual",
+    precio: "$350 MXN",
   },
   {
-    nombre: "Consulta Familiar",
-    precio: "$1,200 MXN",
+    nombre: "Terapia de pareja",
+    precio: "$400 MXN",
+  },
+  {
+    nombre: "Terapia familiar",
+    precio: "$400 MXN",
+  },
+  {
+    nombre: "Intervención en crisis",
+    precio: "$350 MXN",
+  },
+  {
+    nombre: "Orientación vocacional",
+    precio: "$300 MXN",
+  },
+  {
+    nombre: "Manejo de duelo",
+    precio: "$350 MXN",
+  },
+  {
+    nombre: "Evaluaciones clínicas",
+    precio: "$500 MXN",
+  },
+  {
+    nombre: "Rehabilitación domicilaria",
+    precio: "$400 MXN",
   },
 ];
 
 const psicologiaForense = [
-  "Peritajes psicológicos",
-  "Evaluaciones de custodia",
-  "Valoraciones familiares",
-  "Ratificación de dictámenes",
-  "Asesoría pericial",
+"Evaluaciones y dictámenes psicológicos",
+"Peritajes para juicios y audiencias",
+"Informes y asesoría técnica‑psicológica",
+"Acompañamiento y preparación para comparecencias",
+"Intervención en conflictos, custodia, violencia o responsabilidad",
+
 ];
 
 const psicologiaHolistica = [
-  "Terapia Holística",
-  "Meditación guiada",
-  "Mindfulness",
-  "Desarrollo personal",
+"Atención integral: mente, cuerpo y emociones",
+"Manejo de estrés, ansiedad, duelos y traumas",
+"Recuperación del equilibrio y sentido de vida",
+"Integración de herramientas suaves y enfoques orientales",
+
 ];
 
 export default function Servicios() {
