@@ -59,9 +59,12 @@ export default function Intro() {
                             text-[var(--primary-dark)]
                         "
                     >
-                        Atención profesional que une la seriedad técnica requerida en procesos legales con un cuidado completo: mente, emociones, cuerpo y vínculos. 
+                        Atención profesional que une la seriedad técnica requerida en procesos
+                         legales con un cuidado completo: mente, emociones, cuerpo y vínculos. 
                         Acompañamiento confiable y humano para personas, familias y autoridades.
+                        Es un espacio multidiciplinario donde se busca impactar de una manera holística en nuestros pacientes. 
                     </p>
+                    
                 </motion.div>
             </Container>
 

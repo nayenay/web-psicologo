@@ -14,6 +14,11 @@ const navigationItems = [
     specialty: false,
   },
   {
+    label: "Blog",
+    href: "#servicios",
+    specialty: false,
+  },
+  {
     label: "Psicología Forense",
     href: "/forense",
     specialty: true,

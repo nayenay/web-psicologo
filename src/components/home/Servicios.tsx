@@ -23,10 +23,6 @@ const psicologiaClinica = [
     precio: "$350 MXN",
   },
   {
-    nombre: "Orientación vocacional",
-    precio: "$300 MXN",
-  },
-  {
     nombre: "Manejo de duelo",
     precio: "$350 MXN",
   },
@@ -44,7 +40,6 @@ const psicologiaForense = [
 "Evaluaciones y dictámenes psicológicos",
 "Peritajes para juicios y audiencias",
 "Informes y asesoría técnica‑psicológica",
-"Acompañamiento y preparación para comparecencias",
 "Intervención en conflictos, custodia, violencia o responsabilidad",
 
 ];
@@ -52,8 +47,7 @@ const psicologiaForense = [
 const psicologiaHolistica = [
 "Atención integral: mente, cuerpo y emociones",
 "Manejo de estrés, ansiedad, duelos y traumas",
-"Recuperación del equilibrio y sentido de vida",
-"Integración de herramientas suaves y enfoques orientales",
+"Recuperación del equilibrio y sentido de vida"
 
 ];
 
