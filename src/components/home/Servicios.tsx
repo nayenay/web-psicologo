@@ -55,7 +55,7 @@ export default function Servicios() {
     return (
         <section
             id="servicios"
-            className="py-24 bg-[var(--background)]"
+            className="py-2 bg-[var(--background)]"
         >
             <Container>
                 <div className="text-center mb-16">
