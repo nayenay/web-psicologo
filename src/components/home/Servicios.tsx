@@ -85,7 +85,7 @@ export default function Servicios() {
                         buttonText="Agendar cita"
                         buttonHref="#agendarcita"
                     >
-                        <div className="space-y-3">
+                        <div className="space-y-1">
                             {psicologiaClinica.map((consulta) => (
                                 <div
                                     key={consulta.nombre}
@@ -118,7 +118,7 @@ export default function Servicios() {
                         buttonText="Ver más"
                         buttonHref="/forense"
                     >
-                        <ul className="space-y-4">
+                        <ul className="space-y-6">
 
                             {psicologiaForense.map((servicio) => (
 
@@ -131,7 +131,7 @@ export default function Servicios() {
                                         className="
                                             mt-2
                                             h-2
-                                            w-2
+                                            w-2                            
                                             rounded-full
                                             bg-[var(--primary)]
                                         "

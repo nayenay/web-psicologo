@@ -35,7 +35,7 @@ export default function ServiceCard({
                 {children}
 
             </div>
-            <div className="mt-8 flex flex-1 justify-center">
+            <div className="mt-8 flex  justify-center">
 
                 <Link
                     href={buttonHref}
