@@ -2,6 +2,7 @@ import Hero from "@/components/home/Hero";
 import Intro from "@/components/home/Intro";
 import Servicios from "@/components/home/Servicios";
 import Conoceme from "@/components/home/Conoceme";
+import Ubicacion from "@/components/home/Ubicacion"
 
 export default function Home() {
   return (
@@ -10,6 +11,8 @@ export default function Home() {
       <Intro />
       <Servicios />
       <Conoceme />
+      <Ubicacion />
+
 
       <section id="servicios">
         <h1>Servicios</h1>
