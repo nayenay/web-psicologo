@@ -1,32 +1,33 @@
 import Container from "../layout/Container";
-import { Globe } from "lucide-react";
-import {
-    Phone,
-    Mail,
-    
-    MessageCircle,
-} from "lucide-react";
+import WhatsAppIcon from "@/assets/icons/whatsapp1.svg";
+import Image from "next/image";
+
+
 
 const contactos = [
     {
         nombre: "WhatsApp",
-        icono: MessageCircle,
-        enlace: "https://wa.me/5214921234567",
+        descripcion: "+52 1 4921216655",
+        icono: "/icons/whatsapp1.svg",
+        enlace: "https://wa.me/5214921216655",
     },
     {
         nombre: "Correo",
-        icono: Mail,
+        descripcion: "correo@ejemplo.com",
+        icono: "/icons/email1.svg",
         enlace: "mailto:correo@ejemplo.com",
     },
     {
         nombre: "Facebook",
-        icono: Globe,
+        descripcion: "Terapias Orientales y Psicoterapia Zacatecas",
+        icono: "/icons/facebook1.svg",
         enlace: "https://www.facebook.com/profile.php?id=100063555849752&locale=es_LA",
     },
     {
         nombre: "Teléfono",
-        icono: Phone,
-        enlace: "tel:+524921234567",
+        descripcion: "+52 4921216655",
+        icono: "/icons/phone1.svg",
+        enlace: "tel:+524921216655",
     },
 ];
 
@@ -52,7 +53,7 @@ export default function Contacto() {
 
                     {contactos.map((contacto) => {
 
-                        const Icon = contacto.icono;
+                        
 
                         return (
 
@@ -62,6 +63,7 @@ export default function Contacto() {
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="
+                                    group
                                     rounded-3xl
                                     bg-[var(--card)]
                                     p-8
@@ -74,12 +76,18 @@ export default function Contacto() {
                                 "
                             >
 
-                                <Icon
-                                    size={48}
+                                <Image
+                                    src={contacto.icono}
+                                    alt={contacto.nombre}
+                                    width={55}
+                                    height={55}
                                     className="
                                         mx-auto
                                         mb-4
-                                        text-[var(--primary)]
+                                        
+                                        transition-transform
+                                        duration-300
+                                        group-hover:scale-110
                                     "
                                 />
 
@@ -87,10 +95,20 @@ export default function Contacto() {
                                     className="
                                         text-xl
                                         font-bold
+                                        mb-2
                                         text-[var(--primary-dark)]
                                     "
                                 >
                                     {contacto.nombre}
+                                </h3>
+                                <h3
+                                    className="
+                                        text-xl
+                                        font-normal
+                                        text-[var(--primary-light)]
+                                    "
+                                >
+                                    {contacto.descripcion}
                                 </h3>
 
                             </a>
@@ -99,6 +117,10 @@ export default function Contacto() {
                     })}
 
                 </div>
+
+                
+
+
             </Container>
         </section>
     );
