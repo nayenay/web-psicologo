@@ -5,6 +5,8 @@ import Conoceme from "@/components/home/Conoceme";
 import Ubicacion from "@/components/home/Ubicacion";
 import Contacto from "@/components/home/Contacto";
 import SinAutenticar from "@/components/home/SinAutentificar"
+import ComentarioSinCuenta from "@/components/home/ComentarioSinCuenta";
+import Comentarios from "@/components/home/Comentarios";  
 
 export default function Home() {
   return (
@@ -16,7 +18,9 @@ export default function Home() {
       <Ubicacion />
       <Contacto />
       <SinAutenticar />
-
+      <Comentarios />
+      <ComentarioSinCuenta />
+      
       
 
     </main>
