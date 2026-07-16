@@ -3,17 +3,17 @@ import Container from "../layout/Container";
 
 export default function Ubicacion(){
     return (
-        <section id="servicios"
-                    className="py-20 bg-[var(--background)]">
+        <section id="ubicacion"
+                    className="py-2 bg-[var(--background)]">
                     <Container>
-                        <div className="text-center mb-16">
+                        <div className="text-center mb-10">
                             <h2 className=" text-4xl font-bold text-[var(--primary-dark)]">
                                 Ubicación
                             </h2>             
                             <div className="  mx-auto  mt-5  h-1  w-28  rounded-full  bg-[var(--primary)]  "/>
                         </div > 
    
-                        <div className="text-center mb-16">
+                        <div className="text-center mb-8">
                             <p className="text-xl leading-9 text-justify text-[var(--primary-dark)]">Roberto Cabral del Hoyo
                                 Gustavo Diaz Ordaz 1Ra Sección 
                                 Zacatecas 98020</p>

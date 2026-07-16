@@ -4,6 +4,7 @@ import Servicios from "@/components/home/Servicios";
 import Conoceme from "@/components/home/Conoceme";
 import Ubicacion from "@/components/home/Ubicacion";
 import Contacto from "@/components/home/Contacto";
+import SinAutenticar from "@/components/home/SinAutentificar"
 
 export default function Home() {
   return (
@@ -14,7 +15,7 @@ export default function Home() {
       <Conoceme />
       <Ubicacion />
       <Contacto />
-
+      <SinAutenticar />
 
       
 

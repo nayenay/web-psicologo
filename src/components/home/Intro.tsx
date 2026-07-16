@@ -6,7 +6,7 @@ export default function Intro() {
 
     return (
 
-        <section className="py-20">
+        <section className="py-10">
 
             <Container>
                 <motion.div

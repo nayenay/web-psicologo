@@ -36,7 +36,7 @@ export default function Contacto() {
     return (
         <section
             id="contacto"
-            className="py-20 bg-[var(--background)]"
+            className="py-10 mt-10 bg-[var(--background)]"
         >
             <Container>
 
