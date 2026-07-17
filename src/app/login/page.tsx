@@ -1,14 +1,19 @@
+"use client";
+import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
 import Container from "@/components/layout/Container";
-
 import Card from "@/components/forms/Card";
 import Input from "@/components/forms/Input";
 import PasswordInput from "@/components/forms/PasswordInput";
 import SubmitButton from "@/components/forms/SubmitButton";
 
 export default function Login() {
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    console.log("Correo:", email);
+    console.log("Contraseña:", password);
     return (
         <section className="min-h-screen bg-[var(--background)] flex items-center">
 
@@ -55,9 +60,14 @@ export default function Login() {
                             label="Correo electrónico"
                             type="email"
                             placeholder="correo@ejemplo.com"
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
                         />
 
-                        <PasswordInput />
+                        <PasswordInput 
+                            value={password}
+                            onChange={(e) => setPassword(e.target.value)}
+                        />
 
                         <SubmitButton>
                             Iniciar sesión
