@@ -1,13 +1,19 @@
+import { ChangeEvent } from "react";
 interface InputProps {
     label: string;
     type?: string;
     placeholder?: string;
+    value: string;
+
+    onChange: (event: ChangeEvent<HTMLInputElement>) => void;
 }
 
 export default function Input({
     label,
     type = "text",
     placeholder,
+    value,
+    onChange,
 }: InputProps) {
     return (
         <div className="space-y-2">
@@ -26,6 +32,8 @@ export default function Input({
             <input
                 type={type}
                 placeholder={placeholder}
+                value={value}
+                onChange={onChange}
                 className="
                     w-full
                     rounded-xl
