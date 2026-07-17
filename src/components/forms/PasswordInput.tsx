@@ -15,7 +15,7 @@ export default function PasswordInput({
             label="Contraseña"
             type="password"
             placeholder="********"
-            value="value"
+            value={value}
             onChange={onChange}
         />
     );
