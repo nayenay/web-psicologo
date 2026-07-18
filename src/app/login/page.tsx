@@ -12,8 +12,12 @@ import SubmitButton from "@/components/forms/SubmitButton";
 export default function Login() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    console.log("Correo:", email);
-    console.log("Contraseña:", password);
+    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+        console.log("Correo:", email);
+        console.log("Contraseña:", password);
+    };
+    
     return (
         <section className="min-h-screen bg-[var(--background)] flex items-center">
 
@@ -54,7 +58,9 @@ export default function Login() {
                         Inicia sesión para acceder a tu agenda.
                     </p>
 
-                    <form className="space-y-5">
+                    <form className="space-y-5"
+                        onSubmit={handleSubmit}
+                    >
 
                         <Input
                             label="Correo electrónico"
