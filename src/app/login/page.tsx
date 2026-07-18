@@ -14,6 +14,7 @@ export default function Login() {
     const [password, setPassword] = useState("");
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
+
         console.log("Correo:", email);
         console.log("Contraseña:", password);
     };
@@ -55,7 +56,7 @@ export default function Login() {
                             text-[var(--primary-light)]
                         "
                     >
-                        Inicia sesión para acceder a tu agenda.
+                        Inicia sesión para acceder a tu agenda
                     </p>
 
                     <form className="space-y-5"
@@ -80,7 +81,7 @@ export default function Login() {
                         </SubmitButton>
 
                     </form>
-
+                    
                     <div className="mt-8 text-center">
 
                         <Link

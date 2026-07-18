@@ -18,5 +18,5 @@ export default function PasswordInput({
             value={value}
             onChange={onChange}
         />
-    );
+    );  
 }
