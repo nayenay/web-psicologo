@@ -13,13 +13,13 @@ const contactos = [
     },
     {
         nombre: "Correo",
-        descripcion: "correo@ejemplo.com",
+        descripcion: "manuelcqpsicoterapia@gmail.com",
         icono: "/icons/email1.svg",
-        enlace: "mailto:correo@ejemplo.com",
+        enlace: "mailto:manuelcqpsicoterapia@gmail.com",
     },
     {
         nombre: "Facebook",
-        descripcion: "Terapias Orientales y Psicoterapia Zacatecas",
+        descripcion: "Psicoterapia Holística y Forense de Zacatecas",
         icono: "/icons/facebook1.svg",
         enlace: "https://www.facebook.com/profile.php?id=100063555849752&locale=es_LA",
     },

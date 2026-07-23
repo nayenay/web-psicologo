@@ -9,6 +9,9 @@ import Input from "@/components/forms/Input";
 import PasswordInput from "@/components/forms/PasswordInput";
 import SubmitButton from "@/components/forms/SubmitButton";
 
+import { signInWithEmailAndPassword } from "firebase/auth";
+import auth from "@/firebase/auth";
+
 export default function Login() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
