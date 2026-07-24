@@ -15,11 +15,20 @@ import auth from "@/firebase/auth";
 export default function Login() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-
-        console.log("Correo:", email);
-        console.log("Contraseña:", password);
+        try {
+            const userCredential =
+                await signInWithEmailAndPassword(
+                    auth,
+                    email,
+                    password
+                );
+            //console.log(userCredential.user);
+            alert("Inicio de sesión exitoso");
+        } catch (error) {
+            console.error(error);
+        }
     };
     
     return (
