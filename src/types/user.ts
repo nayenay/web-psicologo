@@ -23,4 +23,17 @@ export interface AppUser {
     rol: UserRole;
 
     activo: boolean;
+
+    profesion?: string;
+
+    cedula?: string;
+
+    fotoURL?: string;
+
+    redes?: {
+        facebook?: string;
+        instagram?: string;
+        linkedin?: string;
+        paginaWeb?: string;
+    };
 }    
