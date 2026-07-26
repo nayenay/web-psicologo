@@ -1,3 +1,4 @@
+//Llena ese contexto con datos-
 //después escribiré algo como se muestra a continuación, para que toda la aplicación conozca al usuario autenticado.
 
 /*
