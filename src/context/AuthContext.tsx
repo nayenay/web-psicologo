@@ -2,6 +2,7 @@
 //usuario autenticado + rol + loading +login() +logout() +refreshUser()
 //guardará informacion y funciones
 //evita hacer muchas llamadas de autenticación de firebase 
+//solo define que información existe
 
 //Define qué almacena el contexto
 "use client";//este archivo es un Client Component

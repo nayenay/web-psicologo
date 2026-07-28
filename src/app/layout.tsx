@@ -1,6 +1,7 @@
 import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
+import AuthProvider from "@/providers/AuthProvider";
 
 export default function RootLayout({
   children,
@@ -10,17 +11,15 @@ export default function RootLayout({
   return (
     <html lang="es">
       <body className="bg-[var(--background)] text-[var(--text)] antialiased">
+        <AuthProvider>
+          <Navbar /> 
+          <main>
+            {children}
         
-        <Navbar /> 
+          </main>
+          <Footer />
         
-
-        <main>
-          {children}
-          
-        </main>
-
-        <Footer />
-        
+        </AuthProvider>
         
 
       </body>
