@@ -11,10 +11,42 @@ import SubmitButton from "@/components/forms/SubmitButton";
 
 import { signInWithEmailAndPassword } from "firebase/auth";
 import auth from "@/firebase/auth";
+import { useRouter } from "next/navigation";
+import { useEffect } from "react";
+import useAuth from "@/hooks/useAuth";
 
 export default function Login() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const router = useRouter();
+    const { user, loading } = useAuth();
+    useEffect(() => {//roles
+
+        if (loading) return;
+
+        if (!user) return;
+
+        switch (user.rol) {
+
+            case "cliente":
+                router.replace("/homepage");
+                break;
+
+            case "psicologo":
+                router.replace("/dashboard");
+                break;
+
+            case "administrador":
+                router.replace("/dashboard/admin");
+                break;
+
+            case "autor":
+                router.replace("/dashboard/autor");
+                break;
+
+        }
+
+    }, [user, loading, router]);
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         try {
