@@ -9,11 +9,17 @@ import Input from "@/components/forms/Input";
 import PasswordInput from "@/components/forms/PasswordInput";
 import SubmitButton from "@/components/forms/SubmitButton";
 
-import { signInWithEmailAndPassword } from "firebase/auth";
-import auth from "@/firebase/auth";
+import { login } from "@/services/auth.service";
 import { useRouter } from "next/navigation";
 import { useEffect } from "react";
 import useAuth from "@/hooks/useAuth";
+import { signOut } from "firebase/auth";
+
+export async function logout() {
+
+    //await signOut(auth);
+
+}
 
 export default function Login() {
     const [email, setEmail] = useState("");
@@ -51,10 +57,9 @@ export default function Login() {
         e.preventDefault();
         try {
             const userCredential =
-                await signInWithEmailAndPassword(
-                    auth,
+                await login(
                     email,
-                    password
+                    password,
                 );
             //console.log(userCredential.user);
             alert("Inicio de sesión exitoso");
