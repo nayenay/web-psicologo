@@ -4,10 +4,15 @@ import { ReactNode, useEffect } from "react";
 import { useRouter } from "next/navigation";
 
 import useAuth from "@/hooks/useAuth";
-
+export type UserRole =
+    | "cliente"
+    | "autor"
+    | "psicologo"
+    | "administrador";
+    
 interface ProtectedRouteProps {
     children: ReactNode;
-    roles: string[];
+    roles: UserRole[];
 }
 
 export default function ProtectedRoute({
