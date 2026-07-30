@@ -9,7 +9,7 @@ export type UserRole =
     | "autor"
     | "psicologo"
     | "administrador";
-    
+
 interface ProtectedRouteProps {
     children: ReactNode;
     roles: UserRole[];
@@ -39,7 +39,7 @@ export default function ProtectedRoute({
         }
 
         if (!roles.includes(user.rol)) {//verificar si el rol coinside
-            router.replace("/");//regresar
+            router.replace("/no-autorizado");//regresar
             return;
         }
 

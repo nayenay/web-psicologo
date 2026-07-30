@@ -6,7 +6,7 @@ export default function Dashboard() {
 
         <ProtectedRoute roles={["psicologo"]}>
 
-            <h1>Dashboard</h1>
+            <h1>Dashboard del psicologo</h1>
 
         </ProtectedRoute>
 
