@@ -1,8 +1,10 @@
 interface CardProps {
     children: React.ReactNode;
+    className?: string;
 }
 
-export default function Card({ children }: CardProps) {
+export default function Card({ children, className= "", }: CardProps) {
+
     return (
         <div
             className="
@@ -13,6 +15,7 @@ export default function Card({ children }: CardProps) {
                 bg-[var(--card)]
                 p-10
                 shadow-xl
+                ${className}
             "
         >
             {children}

@@ -4,6 +4,7 @@ interface InputProps {
     type?: string;
     placeholder?: string;
     value: string;
+    className?: string;
 
     onChange: (event: ChangeEvent<HTMLInputElement>) => void;
 }
@@ -13,6 +14,7 @@ export default function Input({
     type = "text",
     placeholder,
     value,
+    className= "",
     onChange,
 }: InputProps) {
     return (
@@ -40,7 +42,7 @@ export default function Input({
                     border
                     border-gray-300
                     bg-white
-                    px-4
+                    px-20
                     py-3
                     outline-none
                     transition-all
@@ -48,6 +50,7 @@ export default function Input({
                     focus:border-[var(--primary)]
                     focus:ring-2
                     focus:ring-[var(--primary)]/20
+                    ${className}
                 "
             />
 
