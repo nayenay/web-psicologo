@@ -4,7 +4,8 @@ interface InputProps {
     type?: string;
     placeholder?: string;
     value: string;
-    className?: string;
+    required?: boolean;
+    autoComplete?: string;
 
     onChange: (event: ChangeEvent<HTMLInputElement>) => void;
 }
@@ -14,7 +15,8 @@ export default function Input({
     type = "text",
     placeholder,
     value,
-    className= "",
+    required = false,
+    autoComplete,
     onChange,
 }: InputProps) {
     return (
@@ -36,6 +38,8 @@ export default function Input({
                 placeholder={placeholder}
                 value={value}
                 onChange={onChange}
+                required={required}
+                autoComplete={autoComplete}
                 className="
                     w-full
                     rounded-xl

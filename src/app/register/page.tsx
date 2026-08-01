@@ -74,7 +74,7 @@ export default function Register() {
 
             <Container>
 
-                <Card className="max-w-5xl">
+                <Card className="max-w-5x1">
                     <h1
                         className="
                             text-center
@@ -127,6 +127,8 @@ export default function Register() {
                         <Input
                             label="Correo electrónico"
                             type="email"
+                            autoComplete="email"
+                            required
                             value={correo}
                             onChange={(e) =>
                                 setCorreo(e.target.value)
@@ -137,7 +139,8 @@ export default function Register() {
                         <PasswordInput
                             label="Contraseña"
                             value={password}
-
+                            autoComplete="new-password"
+                            required
                             onChange={(e) =>
                                 setPassword(e.target.value)
                             }
