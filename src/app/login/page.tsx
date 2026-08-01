@@ -117,11 +117,15 @@ export default function Login() {
                             type="email"
                             placeholder="correo@ejemplo.com"
                             value={email}
+                            required
+                            autoComplete="email"
                             onChange={(e) => setEmail(e.target.value)}
                         />
 
                         <PasswordInput 
                             value={password}
+                            required
+                            autoComplete="current-password"
                             onChange={(e) => setPassword(e.target.value)}
                         />
 

@@ -7,16 +7,15 @@ export default function Card({ children, className= "", }: CardProps) {
 
     return (
         <div
-            className="
+            className='
                 mx-auto
                 w-full
-                max-w-md
                 rounded-3xl
                 bg-[var(--card)]
-                p-10
+                p-5
                 shadow-xl
-                ${className}
-            "
+                ${className || "max-w-md"}
+            '
         >
             {children}
         </div>

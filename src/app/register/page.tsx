@@ -70,11 +70,11 @@ export default function Register() {
 
 
     return (
-        <section className="min-h-screen bg-[var(--background)] flex items-center">
+        <section className="  bg-[var(--background)] flex items-center py-3">
 
             <Container>
 
-                <Card className="max-w-5x1">
+                <Card className="max-w-4x1">
                     <h1
                         className="
                             text-center
@@ -86,7 +86,7 @@ export default function Register() {
                         Crear cuenta
                     </h1>
                     <form
-                        className="space-y-5"
+                        className="space-y-1"
                         onSubmit={handleSubmit}
                     >
                         <div className="grid gap-5 md:grid-cols-2">
@@ -94,12 +94,16 @@ export default function Register() {
                             <Input
                                 label="Nombre"
                                 value={nombre}
+                                required
+                                autoComplete="given-name"
                                 onChange={(e) => setNombre(e.target.value)}
                             />
 
                             <Input
                                 label="Primer apellido"
                                 value={apellidoPaterno}
+                                required
+                                autoComplete="family-name"
                                 onChange={(e) =>
                                     setApellidoPaterno(e.target.value)
                                 }
@@ -108,6 +112,7 @@ export default function Register() {
                             <Input
                                 label="Segundo apellido (opcional)"
                                 value={apellidoMaterno}
+                                autoComplete="additional-name"
                                 onChange={(e) =>
                                     setApellidoMaterno(e.target.value)
                                 }
@@ -118,6 +123,8 @@ export default function Register() {
                                 label="Teléfono"
                                 type="tel"
                                 value={telefono}
+                                required
+                                autoComplete="tel"
                                 onChange={(e) =>
                                     setTelefono(e.target.value)
                                 }
@@ -149,6 +156,8 @@ export default function Register() {
                         <PasswordInput
                             label="Confirmar contraseña"
                             value={confirmPassword}
+                            required
+                            autoComplete="new-password"
                             onChange={(e) =>
                                 setConfirmPassword(e.target.value)
                             }
@@ -160,7 +169,7 @@ export default function Register() {
 
                         </SubmitButton>
 
-                        <div className="mt-8 text-center">
+                        <div className="mt-4 text-center">
 
                             <p className="text-sm">
 
@@ -170,7 +179,7 @@ export default function Register() {
 
                             <Link
                                 href="/login"
-                                className="text-[var(--accent)] hover:underline"
+                                className="text-[var(--accent)] font-bold hover:underline"
                             >
 
                                 Inicia sesión
