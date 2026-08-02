@@ -26,16 +26,18 @@ export default function Register() {
     const [telefono, setTelefono] = useState("");
     const [password, setPassword] = useState("");
     const [confirmPassword, setConfirmPassword] = useState("");
+    const [error, setError] = useState("");
+    const [loading, setLoading] = useState(false);
 
     //función para validar los datos en un formulario y prepararlos antes de enviarlos
     async function handleSubmit(
         e: React.FormEvent<HTMLFormElement>
     ) {
-
+        
         e.preventDefault();
-
+        setError("");
         if (password !== confirmPassword) {
-            alert("Las contraseñas no coinciden.");
+            setError("Las contraseñas no coinciden.");
             return;
         }
         try {
@@ -85,6 +87,23 @@ export default function Register() {
                     >
                         Crear cuenta
                     </h1>
+                    {error && (
+                        <div
+                            className="
+                                mt-6
+                                rounded-xl
+                                border
+                                border-red-300
+                                bg-red-50
+                                px-4
+                                py-3
+                                text-sm
+                                text-red-700
+                            "
+                        >
+                            {error}
+                        </div>
+                    )}
                     <form
                         className="space-y-1"
                         onSubmit={handleSubmit}
