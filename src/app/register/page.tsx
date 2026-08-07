@@ -41,7 +41,7 @@ export default function Register() {
             return;
         }
         try {
-
+            setLoading(true);
             await register({
 
                 nombre,
@@ -59,8 +59,11 @@ export default function Register() {
 
             console.error(error);
 
-            alert("No fue posible crear la cuenta.");
+            setError("No fue posible crear la cuenta.");
 
+        }
+        finally {
+            setLoading(false);
         }
         
     }
@@ -184,7 +187,8 @@ export default function Register() {
 
                         <SubmitButton>
 
-                            Crear cuenta
+                            {loading ? "Creando cuenta..." : "Crear cuenta"}
+
 
                         </SubmitButton>
 
