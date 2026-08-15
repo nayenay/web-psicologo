@@ -6,6 +6,7 @@ interface InputProps {
     value: string;
     required?: boolean;
     autoComplete?: string;
+    error?: String;
 
     onChange: (event: ChangeEvent<HTMLInputElement>) => void;
 }
@@ -17,6 +18,7 @@ export default function Input({
     value,
     required = false,
     autoComplete,
+    error,
     onChange,
 }: InputProps) {
     return (
@@ -40,7 +42,7 @@ export default function Input({
                 onChange={onChange}
                 required={required}
                 autoComplete={autoComplete}
-                className="
+                className={`
                     w-full
                     rounded-xl
                     border
@@ -51,12 +53,15 @@ export default function Input({
                     outline-none
                     transition-all
                     duration-300
-                    focus:border-[var(--primary)]
-                    focus:ring-2
-                    focus:ring-[var(--primary)]/20
-                    ${className}
-                "
-            />
+                    bg-white
+
+                    
+                    ${
+                        error? "border-red-400 focus:ring-red-300"
+                            : "border-gray-300 focus:border-[var(--primary)] focus:ring-2 focus:ring-[var(--primary)]/20"
+                    }
+                `}
+            />//no veo cambios de color en el borde del input, 
 
         </div>
     );
