@@ -1,7 +1,8 @@
+//estructura visual de la sección
 import Link from "next/link";
 import Container from "../layout/Container";
 
-
+/*
 export default function Comentarios(){
     return (
         <section id="comentarios"
@@ -17,4 +18,47 @@ export default function Comentarios(){
             </Container>
         </section>
     )
-}                
+}   
+    */     
+
+import CommentList from "@/components/comments/CommentList";
+
+export default function Comentarios() {
+    return (
+        <section
+            id="comentarios"
+            className="
+                py-16
+                bg-[var(--background)]
+            "
+        >
+            <div className="mx-auto w-full max-w-4xl px-6">
+
+                <h2
+                    className="
+                        text-center
+                        text-3xl
+                        font-bold
+                        text-[var(--primary-dark)]
+                    "
+                >
+                    Comentarios
+                </h2>
+
+                <p
+                    className="
+                        mt-3
+                        mb-10
+                        text-center
+                        text-[var(--primary-light)]
+                    "
+                >
+                    Conoce las experiencias de quienes han recibido atención.
+                </p>
+
+                <CommentList />
+
+            </div>
+        </section>
+    );
+}
