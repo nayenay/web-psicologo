@@ -10,6 +10,7 @@
 import { createContext } from "react";
 import { AppUser } from "@/types/user";
 
+
 interface AuthContextType {
     user: AppUser | null;
     loading: boolean;
@@ -21,3 +22,7 @@ const AuthContext = createContext<AuthContextType>({
 });
 
 export default AuthContext;
+
+export function useAuth() {
+    return useContext(AuthContext);
+}
